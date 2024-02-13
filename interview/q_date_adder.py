@@ -1,9 +1,10 @@
+# Python
 import datetime
 from typing import Any
 
 
 # BigO(n)
-def date_adder(date: Any, diapason: int, periods: int) -> list:
+def add_days_to_date(date: Any, diapason: int, periods: int) -> list:
     converted_date = datetime.datetime.strptime(str(date), "%Y-%m-%d")
     result = [date]
     months = dict()
@@ -29,7 +30,10 @@ def date_adder(date: Any, diapason: int, periods: int) -> list:
     return result
 
 
-res = date_adder("2024-01-01", 15, 6)
-# res = date_adder("2024-01-20", 15, 6)
-# res = date_adder("2024-01-17", 15, 6)
+res = add_days_to_date("2024-01-01", 15, 6)
+# res = add_days_to_date("2024-01-20", 15, 6)
+
+# Additional tests
+# res = add_days_to_date("2024-01-17", 15, 6)
+# res = add_days_to_date("2024-01-2", 15, 6)
 print(res)
