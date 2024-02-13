@@ -1,34 +1,32 @@
-# class Solution:
-#     def nthUglyNumber(self, n: int):
-#         res = []
-#
-#         if n == 1:
-#             return 1
-#
-#         for i in range(0, 1690):
-#             if len(res) < n:
-#                 if i % 2 == 0 or i % 3 == 0 or i % 5 == 0:
-#                     res.append(i)
-#         return res
-#
-#
-# if __name__ == '__main__':
-#     n = 11
-#     print(Solution().nthUglyNumber(n))
+import math
+
 
 class Solution:
-    def reverseVowels(self, s: str):
-        for i in range(len(s)):
-            vowels = ['a', 'e', 'i', 'o', 'u']
-            hold = ''
-            if s[i] in vowels:
-                s[i] = hold
 
-                hold += s[i]
-                print(s[i])
-            print(hold)
+    def numSquares(self, n: int):
+        data = []
+        for i in range(1, n + 1): data.append(i)
+        sample = [num for num in data if math.sqrt(num) % 2 == 0 or math.sqrt(num) % 3 == 0]
+        tmp = 0
+        res_1 = 0
+        res_2 = 0
+
+        for i in range(len(sample)-1):
+            while tmp <= n:
+                if tmp != n:
+                    tmp += sample[i + 1]
+                    res_1 += 1
+                tmp += sample[i]
+                res_1 += 1
+            tmp = 0
+            while tmp <= n:
+                tmp += sample[i]
+                n -= sample[i]
+                res_2 += 1
+
+        return min(res_2, res_1)
 
 
 if __name__ == '__main__':
-    s = 'leetcode'
-    print(Solution().reverseVowels(s))
+    n = 12
+    print(Solution().numSquares(n))
