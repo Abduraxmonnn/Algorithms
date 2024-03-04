@@ -1,9 +1,9 @@
 def find_maximum(arr):
     maximum = arr[0]
 
-    for i in arr:
-        if maximum < i:
-            maximum = i
+    for item in arr:
+        if item > maximum:
+            maximum = item
 
     return maximum
 

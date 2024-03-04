@@ -1,11 +1,11 @@
 class Solution(object):
     def deleteDuplicates(self, head):
-        new_l = []
+        new_list = []
 
         for element in head:
-            if element not in new_l:
-                new_l.append(element)
-        return new_l
+            if element not in new_list:
+                new_list.append(element)
+        return new_list
 
 
 if __name__ == '__main__':
