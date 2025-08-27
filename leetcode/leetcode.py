@@ -27,6 +27,4 @@ class Solution:
         return min(res_2, res_1)
 
 
-if __name__ == '__main__':
-    n = 12
-    print(Solution().numSquares(n))
+

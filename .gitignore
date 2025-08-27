@@ -1,1 +1,19 @@
-*/.idea
+# IntelliJ IDEA project settings
+.idea/
+
+# macOS system file
+.DS_Store
+
+# Python cache files
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.cpython-*
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
