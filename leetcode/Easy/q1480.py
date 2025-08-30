@@ -1,11 +1,13 @@
 class Solution(object):
     def runningSum(self, nums):
         # -> 1
+        # O(N)
         for a in range(1, len(nums)):
             nums[a] += nums[a - 1]
         return nums
 
-        # -> 2
+        # # -> 2
+        # # O(N)
         # step = 0
         # result = []
         #
