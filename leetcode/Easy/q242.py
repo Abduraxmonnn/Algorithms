@@ -34,7 +34,7 @@ class Solution(object):
         # if sorted(list(s)) == sorted(list(t)):
         #     return True
         # return False
-        # 2.2
+        # # 3.1
         # return Counter(s) == Counter(t)
 
         # # OLD
