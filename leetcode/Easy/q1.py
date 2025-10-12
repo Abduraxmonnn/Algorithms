@@ -1,16 +1,29 @@
 class Solution(object):
     def twoSum(self, nums, target):
-        # -> 1
-        for i in range(len(nums)):
-            a = target - nums[i]
-            if a in nums and i != nums.index(a):
-                return [i, nums.index(a)]
+        # # -> 1
+        # # O(N^2)
+        # for i, j in enumerate(nums):
+        #     tmp = target - j
+        #     for idx in (range(i + 1, len(nums))):
+        #         if tmp == nums[idx]:
+        #             return [i, idx]
 
-        # # -> 2
+        # -> 2
+        # O(N^2)
         # for i in range(len(nums)):
-        #     for j in range(i + 1, len(nums)):
-        #         if nums[i] + nums[j] == target:
-        #             return [i, j]
+        #     a = target - nums[i]
+        #     a_idx = nums.index(a)
+        #     if a in nums and i != a_idx:
+        #         return [i, a_idx]
+
+        # -> 3
+        # O(N)
+        pair_idx = {}
+
+        for idx, val in enumerate(nums):
+            if target - val in pair_idx:
+                return [idx, pair_idx[target - val]]
+            pair_idx[val] = idx
 
 
 if __name__ == '__main__':
