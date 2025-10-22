@@ -43,7 +43,9 @@ class Solution:
         # O(n * m)
         groups = defaultdict(list)
         for word in strs:
+
             key = "".join(sorted(word))
+            
             if key in groups:
                 groups[key].append(word)
             else:
