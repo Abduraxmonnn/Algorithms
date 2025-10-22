@@ -42,10 +42,14 @@ class Solution:
         # -> 3
         # O(n * m)
         groups = defaultdict(list)
+        # groups will work like:
+        # act -> act -> {act: [act]}
+        # cat -> act -> {act: [act, cat]}
+        # tac -> act -> {act: [act, cat, tac]}
         for word in strs:
 
             key = "".join(sorted(word))
-            
+
             if key in groups:
                 groups[key].append(word)
             else:
