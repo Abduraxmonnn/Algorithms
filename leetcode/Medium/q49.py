@@ -48,7 +48,7 @@ class Solution:
         # tac -> act -> {act: [act, cat, tac]}
         for word in strs:
 
-            key = "".join(sorted(word))
+            key = "".join(sorted(word))  # sorted save as list, we need str
 
             if key in groups:
                 groups[key].append(word)

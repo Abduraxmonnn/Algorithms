@@ -1,14 +1,11 @@
-class Solution:
-    def numJewelsInStones(self, jewels: str, stones: str) -> int:
-        jewels_count = 0
-        for j in stones:
-            if j in jewels:
-                jewels_count += 1
+from typing import List
 
-        return jewels_count
+
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        ...
 
 
 if __name__ == '__main__':
-    jewels = "aA"
-    stones = "aAAbbbb"
-    print(Solution().numJewelsInStones(jewels, stones))
+    nums = [1, 2, 4, 6]
+    print(Solution().productExceptSelf(nums))
